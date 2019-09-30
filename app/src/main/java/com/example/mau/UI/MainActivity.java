@@ -1,5 +1,8 @@
 package com.example.mau.UI;
 
+import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -8,13 +11,10 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
-import android.os.Bundle;
-import android.view.MenuItem;
-
 import com.example.mau.R;
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -43,12 +43,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (menuItem.getItemId()) {
             case R.id.nav_discover: {
+                Navigation.findNavController(this,R.id.nav_Host_Fragment).navigate(R.id.discover);
+
                 break;
             }
             case R.id.nav_schedule: {
+                Navigation.findNavController(this,R.id.nav_Host_Fragment).navigate(R.id.schedule);
                 break;
             }
             case R.id.nav_scan: {
+                Navigation.findNavController(this,R.id.nav_Host_Fragment).navigate(R.id.scan);
                 break;
             }
         }

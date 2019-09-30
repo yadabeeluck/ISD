@@ -11,4 +11,10 @@
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment1" />
 
+    <Button
+        android:id="@+id/b_map"
+        android:layout_width="142dp"
+        android:layout_height="wrap_content"
+        android:text="@string/s_map" />
+
 </FrameLayout>

@@ -1,14 +1,14 @@
 package com.example.mau;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 
 /**
@@ -34,6 +34,11 @@ public class discover extends Fragment  {
     public discover() {
         // Required empty public constructor
     }
+
+
+
+
+
 
     /**
      * Use this factory method to create a new instance of
@@ -66,8 +71,19 @@ public class discover extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_discover, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_discover, container, false);
+        final Button button = rootView.findViewById(R.id.b_map);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.map);
+
+            }
+        });
+        return rootView;
+
     }
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -77,6 +93,24 @@ public class discover extends Fragment  {
     }
 
 
+
+
+    /*@Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }*/
 
 
 
@@ -94,4 +128,5 @@ public class discover extends Fragment  {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
 }
