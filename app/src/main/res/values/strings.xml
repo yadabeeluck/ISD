@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Mau</string>
+    <string name="s_discover">Discover</string>
+    <string name="s_schedule">Schedule</string>
+    <string name="s_scan">Scan</string>
+    <string name="s_setting">Setting</string>
+
+
+
+</resources>
